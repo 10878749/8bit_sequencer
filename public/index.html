@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<!-- Webpack and npm have both been setup, so you can just run 'npm install'
+and 'webpack --watch' if you ever clone this repo -->
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>8bit Sequencer</title>
+
+    <link rel="stylesheet" type="text/css" href="styles/sequencer.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<!--    <link rel="shortcut icon" href="assets/icon.ico" type="image/x-icon">-->
+
+</head>
+<body>
+
+
+<main>
+    <aside class="controls">
+        <div class="play-stop-button stopped"></div>
+
+        <div class="slider-container">
+            <p class="speed-label">speed</p>
+            <label for="bpm-slider"></label><input type="range" min="1" max="400" value="200" class="slider" id="bpm-slider">
+        </div>
+
+        <p class="demo-button">example sequence</p>
+
+        <p class="random-button">randomize</p>
+
+        <p class="clear-button">clear</p>
+    </aside>
+
+    <section class="sampler">
+
+    </section>
+
+    <section class="synthesizer">
+
+    </section>
+</main>
+
+
+<div class="instructions">
+    <div class="modal-overlay"></div>
+
+    <div class="instruction-wrapper">
+        <p class="instruction"></p>
+    </div>
+
+    <footer class="buttons">
+        <p id="back"></p>
+        <p id="skip">Skip</p>
+        <p id="next">Next ></p>
+    </footer>
+</div>
+
+<div class="mobile-warning">
+    <div class="modal-overlay"></div>
+
+    <p>Sorry, this project only works on Desktop browsers :(</p>
+</div>
+
+<script type="text/javascript" src="scripts/bundle.js"></script>
+
+</body>
+</html>
