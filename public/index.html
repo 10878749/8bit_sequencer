@@ -10,7 +10,7 @@ and 'webpack --watch' if you ever clone this repo -->
 
     <link rel="stylesheet" type="text/css" href="styles/sequencer.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<!--    <link rel="shortcut icon" href="assets/icon.ico" type="image/x-icon">-->
+    <!--    <link rel="shortcut icon" href="assets/icon.ico" type="image/x-icon">-->
 </head>
 
 <body>
@@ -20,23 +20,24 @@ and 'webpack --watch' if you ever clone this repo -->
 
 <main>
     <aside class="controls">
-        <div class="play-stop-button stopped"></div>
+        <div class="basic-controls">
+            <div class="play-stop-button stopped"></div>
 
-        <div class="slider-container">
-            <p class="speed-label">speed</p>
-            <input type="range" min="1" max="400" value="200" class="slider" id="bpm-slider">
+            <div class="slider-container">
+                <p class="speed-label">speed</p>
+                <input type="range" min="1" max="400" value="200" class="slider" id="bpm-slider">
+            </div>
         </div>
 
-        <p class="demo-button">example sequence</p>
+        <div class="other-controls">
+            <p class="demo-button">example sequence</p>
 
-        <p class="random-button">randomize</p>
+            <p class="random-button">randomize</p>
 
-        <p class="clear-button">clear</p>
+            <p class="clear-button">clear</p>
+        </div>
+
     </aside>
-
-<!--    <section class="sounds">-->
-
-<!--    </section>-->
 
     <section class="sampler">
 
