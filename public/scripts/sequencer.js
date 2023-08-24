@@ -7,7 +7,11 @@ const numBeat=16
 
 class Synthesizer {
     constructor() {
-        this.source = new Tone.Synth({envelope: {attack  : 0.25}}).toMaster();
+        this.source = new Tone.PolySynth(Tone.Synth, {
+            envelope: {
+                attack: 0.25,
+            }
+        }).toDestination();
         this.noteHash = {
             sound1: 'G2',
             sound2: 'Bb2',
@@ -27,7 +31,7 @@ class Synthesizer {
 
     playNote(soundKey) {
         this.source.triggerAttack(this.noteHash[soundKey], '+0.05');
-        this.source.triggerRelease('+0.25');
+        this.source.triggerRelease(this.noteHash[soundKey], '+0.1');
     }
 }
 
@@ -44,11 +48,12 @@ class Sampler {
             sound17: new Tone.Player({url: 'samples/drums/drum6.wav'}),
 
         };
-
-        // this.source.sound13.volume.value = -3;
-        // this.source.sound14.volume.value = -6;
-        // this.source.sound16.volume.value = -4;
-        // this.source.sound17.volume.value = -8;
+        this.source.sound12.volume.value = -20;
+        this.source.sound13.volume.value = -20;
+        this.source.sound14.volume.value = -20;
+        this.source.sound15.volume.value = -20;
+        this.source.sound16.volume.value = -20;
+        this.source.sound17.volume.value = -20;
 
         for (let i = numSynth+1 ; i <= numSynth+numDrum; i++) {
             const sound = 'sound' + i;
@@ -148,7 +153,7 @@ class Randomizer {
                         set.push([i,j]);
                     }
                 } else if (j >= numSynth+2 && j <= numSynth+numDrum) {
-                    if (this.generateBooleanRandomly(2)) {
+                    if (this.generateBooleanRandomly(0.5)) {
                         set.push([i,j]);
                     }
                 }
