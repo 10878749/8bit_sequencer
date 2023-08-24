@@ -49,7 +49,6 @@ class Sampler {
         // this.source.sound14.volume.value = -6;
         // this.source.sound16.volume.value = -4;
         // this.source.sound17.volume.value = -8;
-        // this.source.sound18.volume.value = -8;
 
         for (let i = numSynth+1 ; i <= numSynth+numDrum; i++) {
             const sound = 'sound' + i;
@@ -149,7 +148,7 @@ class Randomizer {
                         set.push([i,j]);
                     }
                 } else if (j >= numSynth+2 && j <= numSynth+numDrum) {
-                    if (this.generateBooleanRandomly(3)) {
+                    if (this.generateBooleanRandomly(2)) {
                         set.push([i,j]);
                     }
                 }
@@ -303,10 +302,10 @@ class Sequencer {
     }
 
     startPlaying(looping = false) {
-        $(".slider-container").css("display", "none");
-        $(".demo-button").css("display", "none");
-        $(".random-button").css("display", "none");
-        $(".clear-button").css("display", "none");
+        // $(".slider-container").css("display", "none");
+        // $(".demo-button").css("display", "none");
+        // $(".random-button").css("display", "none");
+        // $(".clear-button").css("display", "none");
         $(".play-stop-button").removeClass("stopped").addClass("playing");
 
         const milsToAdd = 60000 / this.bpm();

@@ -96,9 +96,9 @@ header {
     padding-top: 40px;
 }
 
-header p {
-    margin-bottom: 10px;
-}
+/*header p {*/
+/*    margin-bottom: 10px;*/
+/*}*/
 
 /*header a {*/
 /*    border: 1px solid white;*/
@@ -148,6 +148,7 @@ aside {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .basic-controls{
@@ -186,7 +187,7 @@ aside {
 .stopped {
     border-top: 14px solid transparent;
     border-bottom: 14px solid transparent;
-    border-left: 25px solid white;
+    border-left: 25px solid ;
     width: 0px;
     height: 0px;
 
