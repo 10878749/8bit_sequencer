@@ -1,6 +1,9 @@
 //import Tone from "Tone";
 const Tone = require('Tone');
 
+const numSynth=11;
+const numDrum=6;
+const numBeat=16
 
 class Synthesizer {
     constructor() {
@@ -33,37 +36,22 @@ class Synthesizer {
 class Sampler {
     constructor() {
         this.source = {
-            sound12: new Tone.Player({url: 'samples/drums/kick.wav'}),
-            sound13: new Tone.Player({url: 'samples/drums/snare.wav'}),
-            sound14: new Tone.Player({url: 'samples/drums/rim.wav'}),
-            sound15: new Tone.Player({url: 'samples/drums/hihat1.wav'}),
-            sound16: new Tone.Player({url: 'samples/drums/hihat2.wav'}),
-            sound17: new Tone.Player({url: 'samples/drums/shaker1.wav'}),
-            sound18: new Tone.Player({url: 'samples/drums/shaker2.wav'}),
+            sound12: new Tone.Player({url: 'samples/drums/drum1.wav'}),
+            sound13: new Tone.Player({url: 'samples/drums/drum2.wav'}),
+            sound14: new Tone.Player({url: 'samples/drums/drum3.wav'}),
+            sound15: new Tone.Player({url: 'samples/drums/drum4.wav'}),
+            sound16: new Tone.Player({url: 'samples/drums/drum5.wav'}),
+            sound17: new Tone.Player({url: 'samples/drums/drum6.wav'}),
 
-            sound19: new Tone.Player({url: 'samples/scrubs/noscrubs1.mp3'}),
-            sound20: new Tone.Player({url: 'samples/scrubs/noscrubs2.mp3'}),
-            sound21: new Tone.Player({url: 'samples/scrubs/noscrubs3.mp3'}),
-            sound22: new Tone.Player({url: 'samples/scrubs/noscrubs4.mp3'}),
-            sound23: new Tone.Player({url: 'samples/scrubs/noscrubs5.mp3'}),
-
-            sound24: new Tone.Player({url: 'samples/chords/chord1a.mp3'}),
-            sound25: new Tone.Player({url: 'samples/chords/chord1b.mp3'}),
-            sound26: new Tone.Player({url: 'samples/chords/chord3a.mp3'}),
-            sound27: new Tone.Player({url: 'samples/chords/chord3b.mp3'}),
-            sound28: new Tone.Player({url: 'samples/chords/chord2a.mp3'}),
-            sound29: new Tone.Player({url: 'samples/chords/chord2b.mp3'}),
-            sound30: new Tone.Player({url: 'samples/chords/chord2c.mp3'}),
-            sound31: new Tone.Player({url: 'samples/chords/chord2d.mp3'}),
         };
 
-        this.source.sound13.volume.value = -3;
-        this.source.sound14.volume.value = -6;
-        this.source.sound16.volume.value = -4;
-        this.source.sound17.volume.value = -8;
-        this.source.sound18.volume.value = -8;
+        // this.source.sound13.volume.value = -3;
+        // this.source.sound14.volume.value = -6;
+        // this.source.sound16.volume.value = -4;
+        // this.source.sound17.volume.value = -8;
+        // this.source.sound18.volume.value = -8;
 
-        for (let i = 12; i <= 31; i++) {
+        for (let i = numSynth+1 ; i <= numSynth+numDrum; i++) {
             const sound = 'sound' + i;
             this.source[sound].toMaster();
         }
@@ -104,7 +92,7 @@ class Player {
 
         const keyInteger = parseInt(soundKeyCopy.slice(5));
 
-        if (keyInteger < 12) {
+        if (keyInteger < numSynth+1) {
             this.synthesizer.playNote(soundKeyCopy);
         } else {
             this.sampler.playSample(soundKeyCopy);
@@ -118,8 +106,6 @@ class Randomizer {
     constructor() {
         this.settings = {
             drums: "off",
-            vox: "off",
-            chords: "off",
             synth: "off"
         };
 
@@ -151,30 +137,23 @@ class Randomizer {
     createRandomSet() {
         const set = [];
 
-        for (let i = 1; i <= 16; i++) {
-            for (let j = 1; j <= 31; j++) {
+        for (let i = 1; i <= numBeat; i++) {
+            for (let j = 1; j <= numSynth+numDrum; j++) {
 
-                if (j <= 11) {
-                    if (this.generateBooleanRandomly(1)) {
-                        set.push([i,j]);
-                    }
-                } else if (j === 12) {
-                    if (this.generateBooleanRandomly(5)) {
-                        set.push([i,j]);
-                    }
-                } else if (j >= 13 && j <= 18) {
+                if (j <= numSynth) {
                     if (this.generateBooleanRandomly(3)) {
                         set.push([i,j]);
                     }
-                } else if (j >= 19 && j <= 23) {
-                    if (this.generateBooleanRandomly(0.2)) {
+                } else if (j === numSynth+1) {
+                    if (this.generateBooleanRandomly(2)) {
                         set.push([i,j]);
                     }
-                } else if (j >= 24 && j <= 31) {
-                    if (this.generateBooleanRandomly(1.5)) {
+                } else if (j >= numSynth+2 && j <= numSynth+numDrum) {
+                    if (this.generateBooleanRandomly(3)) {
                         set.push([i,j]);
                     }
                 }
+
             }
         }
 
@@ -198,24 +177,20 @@ class Grid {
     }
 
     setup(player) {
-        for (let i = 1; i <= 16; i++) {
+        for (let i = 1; i <= numBeat; i++) {
             const beatId = "beat" + i;
 
             $(".sampler").append(`<ol class='sampler-beat ${beatId}'></ol>`);
             $(".synthesizer").append(`<ol class='synthesizer-beat ${beatId}'></ol>`);
 
-            for (let j = 1; j <= 31; j++) {
+            for (let j = 1; j <= numSynth+numDrum; j++) {
                 const buttonId = beatId + "sound" + j;
                 let type, inst;
 
-                if (j <= 11) {
+                if (j <= numSynth) {
                     type = "synthesizer"; inst = "synth";
-                } else if (j >= 12 && j <= 18) {
+                } else if (j >= numSynth+1 && j <= numSynth+numDrum) {
                     type = "sampler"; inst = "drums";
-                } else if (j >= 19 && j <= 23) {
-                    type = "sampler"; inst = "vox";
-                } else if (j >= 24 && j <= 31) {
-                    type = "sampler"; inst = "chords";
                 }
 
                 $(`.${type}-beat.${beatId}`)
@@ -260,8 +235,6 @@ class Grid {
             [3,13], [7,13], [11,13], [15,13],
             [3,15], [7,15], [11,15], [15,15],
             [2,16], [4,16], [6,16], [8,16], [10,16], [12,16], [14,16], [16,16],
-            [9,19],
-            [1,24], [6,25], [9,28], [12, 31], [14, 30],
             [1,1], [3,9], [4,6], [7,10], [11,11], [15,3]
         ];
 
@@ -274,10 +247,10 @@ class Grid {
     }
 
     clearGrid() {
-        for (let i = 1; i <= 16; i++) {
+        for (let i = 1; i <= numBeat; i++) {
             const beatId = "beat" + i;
 
-            for (let j = 1; j <= 31; j++) {
+            for (let j = 1; j <= numSynth+numDrum; j++) {
                 const buttonId = beatId + "sound" + j;
                 $(`#${buttonId}`).removeClass('turned-on');
             }
@@ -339,14 +312,14 @@ class Sequencer {
         const milsToAdd = 60000 / this.bpm();
         let mils = 5;
 
-        for (let i = 1; i <= 16; i++) {
+        for (let i = 1; i <= numBeat; i++) {
             const beatId = "beat" + i;
 
             this.timeouts[beatId] = setTimeout(() => {
                 this.grid.highlightColumn(beatId);
             }, mils);
 
-            for (let j = 1; j <= 31; j++) {
+            for (let j = 1; j <= numSynth+numDrum; j++) {
                 const buttonId = beatId + "sound" + j;
 
                 this.timeouts[buttonId] = setTimeout(() => {
@@ -369,11 +342,11 @@ class Sequencer {
         $(".clear-button").css("display", "inline");
         $(".play-stop-button").removeClass("playing").addClass("stopped");
 
-        for (let i = 1; i <= 16; i++) {
+        for (let i = 1; i <= numBeat; i++) {
             const beatId = "beat" + i;
             clearTimeout(this.timeouts[beatId]);
 
-            for (let j = 1; j <= 31; j++) {
+            for (let j = 1; j <= numSynth+numDrum; j++) {
                 const buttonId = beatId + "sound" + j;
                 clearTimeout(this.timeouts[buttonId]);
             }
