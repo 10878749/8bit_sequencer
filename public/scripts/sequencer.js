@@ -307,10 +307,11 @@ class Sequencer {
     }
 
     startPlaying(looping = false) {
-        // $(".slider-container").css("display", "none");
-        // $(".demo-button").css("display", "none");
-        // $(".random-button").css("display", "none");
-        // $(".clear-button").css("display", "none");
+        $(".slider-container").css("display", "none");
+        $(".demo-button").css("display", "none");
+        $(".random-button").css("display", "none");
+        $(".clear-button").css("display", "none");
+
         $(".play-stop-button").removeClass("stopped").addClass("playing");
 
         const milsToAdd = 60000 / this.bpm();
@@ -344,6 +345,10 @@ class Sequencer {
         $(".demo-button").css("display", "inline");
         $(".random-button").css("display", "inline");
         $(".clear-button").css("display", "inline");
+        // $(".slider-container").disabled=false;
+        // $(".demo-button").disabled=false;
+        // $(".random-button").disabled=false;
+        // $(".clear-button").disabled=false;
         $(".play-stop-button").removeClass("playing").addClass("stopped");
 
         for (let i = 1; i <= numBeat; i++) {
