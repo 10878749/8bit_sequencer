@@ -48,7 +48,7 @@ class Sampler {
             sound17: new Tone.Player({url: 'samples/drums/drum6.wav'}),
 
         };
-        this.source.sound12.volume.value = -20;
+        this.source.sound12.volume.value = -15;
         this.source.sound13.volume.value = -20;
         this.source.sound14.volume.value = -20;
         this.source.sound15.volume.value = -20;
@@ -149,11 +149,11 @@ class Randomizer {
                         set.push([i,j]);
                     }
                 } else if (j === numSynth+1) {
-                    if (this.generateBooleanRandomly(2)) {
+                    if (this.generateBooleanRandomly(1)) {
                         set.push([i,j]);
                     }
                 } else if (j >= numSynth+2 && j <= numSynth+numDrum) {
-                    if (this.generateBooleanRandomly(0.5)) {
+                    if (this.generateBooleanRandomly(1)) {
                         set.push([i,j]);
                     }
                 }
