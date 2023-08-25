@@ -129,11 +129,12 @@ class Randomizer {
             $(`#${buttonId}`).addClass("turned-on");
         });
 
-        let bpmValue = Math.random() * 400;
+        let bpmValue = Math.random() * 300;
 
-        if (bpmValue < 380 && bpmValue >= 300) {
-            bpmValue += 20;
-        } else if (bpmValue < 300 && bpmValue >= 200) {
+        // if (bpmValue < 380 && bpmValue >= 300) {
+        //     bpmValue += 20;
+        // } else
+        if (bpmValue < 300 && bpmValue >= 200) {
             bpmValue += 35;
         } else if (bpmValue < 200 && bpmValue >= 100) {
             bpmValue += 50;
@@ -151,14 +152,11 @@ class Randomizer {
             for (let j = 1; j <= numSynth+numDrum; j++) {
 
                 if (j <= numSynth) {
-                    if (this.generateBooleanRandomly(3)) {
+                    if (this.generateBooleanRandomly(1.5)) {
                         set.push([i,j]);
                     }
-                } else if (j === numSynth+1) {
-                    if (this.generateBooleanRandomly(1)) {
-                        set.push([i,j]);
-                    }
-                } else if (j >= numSynth+2 && j <= numSynth+numDrum) {
+                }
+                else if (j >= numSynth+1 && j <= numSynth+numDrum) {
                     if (this.generateBooleanRandomly(1)) {
                         set.push([i,j]);
                     }
