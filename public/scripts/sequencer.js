@@ -8,8 +8,13 @@ const numBeat=16
 class Synthesizer {
     constructor() {
         this.source = new Tone.PolySynth(Tone.Synth, {
+
+            oscillator: {
+                type: 'square'
+            },
+
             envelope: {
-                attack: 0.25,
+                attack: 0.25
             }
         }).toDestination();
         this.noteHash = {
@@ -48,12 +53,13 @@ class Sampler {
             sound17: new Tone.Player({url: 'samples/drums/drum6.wav'}),
 
         };
-        this.source.sound12.volume.value = -15;
-        this.source.sound13.volume.value = -20;
-        this.source.sound14.volume.value = -20;
-        this.source.sound15.volume.value = -20;
-        this.source.sound16.volume.value = -20;
-        this.source.sound17.volume.value = -20;
+        this.source.sound12.volume.value = -5;
+        this.source.sound13.volume.value = -10;
+        this.source.sound14.volume.value = -10;
+        this.source.sound15.volume.value = -10;
+        this.source.sound16.volume.value = -10;
+        this.source.sound17.volume.value = -10;
+
 
         for (let i = numSynth+1 ; i <= numSynth+numDrum; i++) {
             const sound = 'sound' + i;
