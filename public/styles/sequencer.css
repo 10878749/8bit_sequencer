@@ -145,7 +145,7 @@ aside {
 }
 
 .slider-container {
-    box-shadow: 2px 2px 1.5px 1.5px rgba(150,148,148,.5);
+    box-shadow: 0 0 7px 7px rgba(150,148,148,.5);
     border: 1px solid white;
     border-radius: 10px;
     padding-bottom: 5px;
@@ -220,18 +220,18 @@ aside p {
 }
 
 .demo-button {
-    box-shadow: 2px 2px 1.5px 1.5px rgba(150,148,148,.5);
+    box-shadow: 0 0 7px 7px rgba(150,148,148,.5);
     width: 180px;
     margin-top: 11px;
 }
 
 .random-button {
-    box-shadow: 2px 2px 1.5px 1.5px rgba(150,148,148,.5);
+    box-shadow: 0 0 7px 7px rgba(150,148,148,.5);
     width: 180px;
 }
 
 .clear-button {
-    box-shadow: 2px 2px 1.5px 1.5px rgba(150,148,148,.5);
+    box-shadow: 0 0 7px 7px rgba(150,148,148,.5);
     width: 180px;
 }
 
@@ -261,7 +261,7 @@ section {
     margin: 4px;
     width: 32px;
     height: 32px;
-    box-shadow: 2px 2px 1.5px 1.5px rgba(150,148,148,.5);
+    box-shadow: 0 0 2px 2px rgba(200,200,200,.5);
     opacity: .4;
 
     cursor: pointer;
