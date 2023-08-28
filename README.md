@@ -2,6 +2,8 @@
 + 8-bit music is a genre of electronic music that emulates the sound of vintage video game consoles and computers, using simple waveforms and limited audio channels to create nostalgic, pixelated melodies.
 + The 8-BIT SEQUENCER is an online app that allows users to create their own 8-bit style loops in an easy way. It can also generate random patterns that allow users to explore more potentials.
 
+  [Live Demo](https://10878749.github.io/8bit_sequencer/public)
+
 # Tech Stack
 1. Language: HTML, CSS, JavaScript
 2. Environment: Node.js
