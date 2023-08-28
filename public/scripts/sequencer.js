@@ -317,6 +317,7 @@ class Sequencer {
         $(".clear-button").css("display", "none");
 
         $(".play-stop-button").removeClass("stopped").addClass("playing");
+        // $(".title").removeClass("t-stopped").addClass("t-playing");
 
         const milsToAdd = 60000 / this.bpm();
         let mils = 5;
@@ -349,12 +350,8 @@ class Sequencer {
         $(".demo-button").css("display", "inline");
         $(".random-button").css("display", "inline");
         $(".clear-button").css("display", "inline");
-        // $(".slider-container").disabled=false;
-        // $(".demo-button").disabled=false;
-        // $(".random-button").disabled=false;
-        // $(".clear-button").disabled=false;
         $(".play-stop-button").removeClass("playing").addClass("stopped");
-
+        // $(".title").removeClass("t-playing").addClass("t-stopped");
         for (let i = 1; i <= numBeat; i++) {
             const beatId = "beat" + i;
             clearTimeout(this.timeouts[beatId]);

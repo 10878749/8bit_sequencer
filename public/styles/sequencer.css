@@ -100,6 +100,11 @@ header {
     /*box-shadow: 2px 2px 1.5px 1.5px rgb(150 148 148);*/
 
 }
+.t-stopped{
+}
+.t-playing{
+    animation: anim-glow 1.5s ease infinite;
+}
 
 @keyframes anim-glow {
     0% {
@@ -185,7 +190,7 @@ aside {
     width: 50px;
     height: 50px;
     animation: anim-glow 1.5s ease infinite;
-    background-color: lightyellow;
+    background-color: white;
 
     opacity: 1;
 }
@@ -251,7 +256,7 @@ section {
 
 
 .sequencer-button {
-    border: 4px solid lightyellow;
+    border: 4px solid white;
     border-radius: 4px;
     margin: 4px;
     width: 32px;
@@ -268,7 +273,7 @@ ol {
 
 .highlighted {
     animation: anim-glow 1.5s ease infinite;
-    background-color: lightyellow;
+    background-color: white;
     opacity: 1;
 }
 
