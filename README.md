@@ -1,4 +1,4 @@
-# What Is Thw 8-BIT SEQUENCER
+# The 8-BIT SEQUENCER
 + 8-bit music is a genre of electronic music that emulates the sound of vintage video game consoles and computers, using simple waveforms and limited audio channels to create nostalgic, pixelated melodies.
 + The 8-BIT SEQUENCER is an online app that allows users to create their own 8-bit style loops in an easy way. It can also generate random patterns that allow users to explore more potentials.
 
