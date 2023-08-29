@@ -4,16 +4,10 @@
 
   [Live Demo](https://10878749.github.io/8bit_sequencer/public)
 
-# Tech Stack
-+ Language: HTML, CSS, JavaScript
-+ Environment: Node.js
-+ Libraries/Frameworks: Tone.js, Express.js
-+ Other tools: Webpack
-
-# Instalation Guide
+# Installation and Run
 ## 1. Requirements
 + Node.js >= Version 16
-+ Yarn
++ Yarn(package manager)
 ```bash
 npm install --global yarn
 ```
@@ -87,6 +81,37 @@ yarn.cmd run start
 + The drum beats are already set to a suitable volume by a series of tests and all the notes of the synthesizer are from the G Major major pentatonic scale, which is a very harmonious scale.
 + That means you don't need any compositional skills to create a catchy loop! Even the random patterns can surprise you easily!
 + Just a little tip: Do not get greedy and turn on too many buttons. (But of course, you can give it a try).
+
+# Implementation Details
+
+## Tech Stack
++ Language: HTML, CSS, JavaScript
++ Environment: Node.js
++ Libraries/Frameworks: Tone.js(to generate the sounds of the synthesizer), Express.js(web framework for server)
++ Other tools: Webpack(for bundling assets)
+
+## File Organization
++ public/: The folder containing all the static resources that are used to render the page.
+  + assets/: The folder containing the static images that are used.
+  + samples/: The folder containing the audio samples for the drum part of the sequencer.
+  + scripts/: The folder containign the JavaScript files that are used for the web interactivity.
+    + *main.js*: The main entry point of the web application.
+    + *modal.js*: The codes handling the interactions of the instruction part of the web application.
+    + *sequencer.js*: The codes that implement the main function of the web application.
+      + 'Synthesizer': This class is responsible for creating a polyphonic synthesizer using the Tone.js library. 
+      + 'Sampler': This class sets up audio samples that are played back when triggered.
+      + 'Player': This class acts as a manager that decides whether to play a note from the 'Synthesizer' or a sample 'from' the Sampler based on the sound key that it receives. 
+      It also includes a parser function to get the sound key from a click event.
+      + 'Randomizer': This class is responsible for the random function. It generates a random sequence of button pressed. It also randomizes the tempo (BPM).
+      + 'Grid': This class handles the visual aspects of the grid on the webpage. It sets up the grid buttons and other visual elements. It also listens to button clicks to toggle the "turned-on" state and includes methods for clearing and setting example sequences.
+      + 'Sequencer': This is the main class tying everything together. It initializes the grid and player, and controls the timing for when to trigger notes or samples. It listens to the play and stop button, starting or stopping the sequence of sounds.
+  + styles/: The folder containing the CSS styling file of the web application/
+  + *index.html*: The main page file of the web application.
++ node_modules: The folder to storing the project's dependencies.
++ *index.js*: The file setting up a web server using the Express.js framework.
++ *package.json*:  The manifest file that's central project used for managing dependencies and scripts.
++ *webpack.config.js*: The file used for bundling assets.
+
 
 #### Author
 + Wenjia Luo 10878749 PoliMi
