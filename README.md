@@ -105,7 +105,7 @@ yarn.cmd run start
       + 'Randomizer': This class is responsible for the random function. It generates a random sequence of button pressed. It also randomizes the tempo (BPM).
       + 'Grid': This class handles the visual aspects of the grid on the webpage. It sets up the grid buttons and other visual elements. It also listens to button clicks to toggle the "turned-on" state and includes methods for clearing and setting example sequences.
       + 'Sequencer': This is the main class tying everything together. It initializes the grid and player, and controls the timing for when to trigger notes or samples. It listens to the play and stop button, starting or stopping the sequence of sounds.
-  + styles/: The folder containing the CSS styling file of the web application/
+  + styles/: The folder containing the CSS styling file of the web application.
   + *index.html*: The main page file of the web application.
 + node_modules: The folder to storing the project's dependencies.
 + *index.js*: The file setting up a web server using the Express.js framework.
