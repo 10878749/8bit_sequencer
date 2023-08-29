@@ -35,21 +35,53 @@ yarn.cmd run start
 # How to Play
 + When you open the website, you will be greeted with a 6-page instruction, which describes in detail the functions of each section.  
 + The instruction is very simple. You can skip it on any page, but reading it entirely the first time you play it is recommended.
-
+<div>
+<img width="500px" src="./readme_imgs/home.png">
+<div>
+<div>
+<img width="500px" src="./readme_imgs/home.png">
+<div>
+  
 + The grid of buttons represents a series of sounds that will be played in a loop. 
 + Each color corresponds to a different instrument. The red buttons play the 8-bit style drum beats(in this project they are actually some common 8-bit game sound effects). The blue ones play the note of the square wave synthesizer. 
-
+<div>
+<img width="500px" src="./readme_imgs/home.png">
+<div>
+  
 + The sequencer buttons can be turned on with a click. When you turn one button on, it will play the sound it represents and start to glow.
 + To turn one button off, just click it again.
+<div>
+<img width="500px" src="./readme_imgs/home.png">
+<div>
 
-+ The control buttons are on the left. The triangle at the top is the play button.
++ The control buttons are on the left.
+<div>
+<img width="500px" src="./readme_imgs/home.png">
+<div>
+  
++ The triangle at the top is the play button.
 + The slider adjusts the speed at which your loop will play.
 + The EXAMPLE SEQUENCE button turns on a pre-set pattern that may inspire you.
+<div>
+<img width="500px" src="./readme_imgs/home.png">
+<div>
+  
 + The RANDOM button gives you a random speed and  a random pattern.
+<div>
+<img width="500px" src="./readme_imgs/home.png">
+<div>
+<div>
+<img width="500px" src="./readme_imgs/home.png">
+<div>
+  
 + The CLEAR button will clear the entire grid.
+
 
 + When playing, the sequencer will highlight and play the sounds that are turned on in a loop at a constant speed.
 + To stop playing, click the glowing square button on the left.
+<div>
+<img width="500px" src="./readme_imgs/home.png">
+<div>
 
 + The drum beats are already set to a suitable volume by a series of tests and all the notes of the synthesizer are from the G Major major pentatonic scale, which is a very harmonious scale.
 + That means you don't need any compositional skills to create a catchy loop! Even the random patterns can surprise you easily!
