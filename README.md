@@ -36,7 +36,7 @@ yarn.cmd run start
 + When you open the website, you will be greeted with a 6-page instruction, which describes in detail the functions of each section.  
 + The instruction is very simple. You can skip it on any page, but reading it entirely the first time you play it is recommended.
 <div>
-<img width="500px" src="./readme_imgs/instruction1.jpg">
+<img width="500px" src="./readme_imgs/instruction1.JPG">
 <div>
 <div>
 <img width="500px" src="./readme_imgs/instruction2.JPG">
