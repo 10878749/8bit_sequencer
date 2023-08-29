@@ -72,8 +72,6 @@ const skip = (clickEvent) => {
     $(".instructions").css("display", "none");
 };
 
-
-
 $("#back").click(step);
 $("#next").click(step);
 $("#skip").click(skip);

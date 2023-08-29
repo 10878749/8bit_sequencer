@@ -40,8 +40,6 @@ class Synthesizer {
     }
 }
 
-
-
 class Sampler {
     constructor() {
         this.source = {
@@ -73,8 +71,6 @@ class Sampler {
         this.source[soundKey].start('+0.05');
     }
 }
-
-
 
 class Player {
     constructor() {
@@ -109,8 +105,6 @@ class Player {
         }
     }
 }
-
-
 
 class Randomizer {
     constructor() {
@@ -172,8 +166,6 @@ class Randomizer {
         return Math.random() < (0.1 * number);
     }
 }
-
-
 
 class Grid {
     constructor() {
@@ -265,8 +257,6 @@ class Grid {
         }
     }
 }
-
-
 
 class Sequencer {
     constructor() {
