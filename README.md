@@ -78,7 +78,7 @@ yarn.cmd run start
 <img width="500px" src="./readme_imgs/playing.JPG">
 <div>
 
-+ The drum beats are already set to a suitable volume by a series of tests and all the notes of the synthesizer are from the G Major major pentatonic scale, which is a very harmonious scale.
++ The drum beats are already set to a suitable volume by a series of tests and all the notes of the synthesizer are from the G major pentatonic scale, which is a very harmonious scale.
 + That means you don't need any compositional skills to create a catchy loop! Even the random patterns can surprise you easily!
 + Just a little tip: Do not get greedy and turn on too many buttons. (But of course, you can give it a try).
 
@@ -111,6 +111,13 @@ yarn.cmd run start
 + *index.js*: The file setting up a web server using the Express.js framework.
 + *package.json*:  The manifest file that's central project used for managing dependencies and scripts.
 + *webpack.config.js*: The file used for bundling assets.
+
+# Further Improvements
++ To implement the feature that allow the users to save and download their loops.
++ To implement the feature that allow the users to user adjust the synthesiser's tone on their own.
++ To add more music instruments.
++ For the sake of tone harmonic, the notes of the synthesizers are all from a G major pentatonic scale. However, as a shortcome, the loop will lack tensions. 
+It would be meaningful to find a way to create more tension While ensuring harmony.
 
 
 #### Author
