@@ -125,9 +125,6 @@ class Randomizer {
 
         let bpmValue = Math.random() * 300;
 
-        // if (bpmValue < 380 && bpmValue >= 300) {
-        //     bpmValue += 20;
-        // } else
         if (bpmValue < 300 && bpmValue >= 200) {
             bpmValue += 35;
         } else if (bpmValue < 200 && bpmValue >= 100) {

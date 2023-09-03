@@ -94,7 +94,7 @@ yarn.cmd run start
 + public/: The folder containing all the static resources that are used to render the page.
   + assets/: The folder containing the static images that are used.
   + samples/: The folder containing the audio samples for the drum part of the sequencer.
-  + scripts/: The folder containign the JavaScript files that are used for the web interactivity.
+  + scripts/: The folder containing the JavaScript files that are used for the web interactivity.
     + *main.js*: The main entry point of the web application.
     + *modal.js*: The codes handling the interactions of the instruction part of the web application.
     + *sequencer.js*: The codes that implement the main function of the web application.
